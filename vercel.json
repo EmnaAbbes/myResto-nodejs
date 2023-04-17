@@ -11,7 +11,13 @@
         {
             "src": "/(.*)",
             "dest": "/app.js",
-            "maxDuration":30
+            "maxDuration": 30
         }
-    ]
+    ],
+    "functions": {
+        "/app.js": {
+            "memory": 3008,
+            "maxDuration": 30
+        }
+    }
 }

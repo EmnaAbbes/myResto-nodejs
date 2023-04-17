@@ -24,8 +24,8 @@ router.post('/', async (req, res) => {
 
 router.get('/:productId', async (req, res) => {
     try {
-        const product = await product.findById(req.params.productId);
-        res.status(200).json(product);
+        const prod = await product.findById(req.params.productId);
+        res.status(200).json(prod);
     } catch (error) {
         res.status(404).json({ message: error.message });
     }

@@ -24,7 +24,7 @@ router.post('/', async (req, res) => {
 
 router.get('/:productId', async (req, res) => {
     try {
-        const prod = await product.findById(req.params.productId);
+        const prod = await product.findById(req.params.productId).populate("categoryID").exec();
         res.status(200).json(prod);
     } catch (error) {
         res.status(404).json({ message: error.message });

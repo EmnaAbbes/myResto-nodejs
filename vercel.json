@@ -10,7 +10,8 @@
     "routes": [
         {
             "src": "/(.*)",
-            "dest": "/app.js"
+            "dest": "/app.js",
+            "apiTimeout": 30000
         }
     ]
 }

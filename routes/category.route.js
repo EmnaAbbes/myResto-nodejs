@@ -28,30 +28,30 @@ router.get('/:categoryId', async (req, res) => {
     try {
         const cat = await category.findById(req.params.categoryId);
         res.status(200).json(cat);
-        } catch (error) {
+    } catch (error) {
         res.status(404).json({ message: error.message });
-        }
-        
+    }
+
 })
 
 router.put('/:categoryId', async (req, res) => {
-    const {name,image} = req.body
+    const { name, image } = req.body
     const id = req.params.categoryId
-    try{
-    const cat = {_id: id,categoryName: name, categoryImage: image}
-    await category.findByIdAndUpdate(id,cat)
-    res.json(cat)
+    try {
+        const cat = { _id: id, categoryName: name, categoryImage: image }
+        await category.findByIdAndUpdate(id, cat)
+        res.json(cat)
     }
     catch (error) {
         res.status(404).json({ message: error.message });
     }
 
 })
-router.delete('/:categoryId', async (req, res)=> {
+router.delete('/:categoryId', async (req, res) => {
     const id = req.params.categoryId;
     await category.findByIdAndDelete(id);
     res.json({ message: "category deleted successfully." });
-    });
-    
+});
+
 
 module.exports = router

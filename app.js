@@ -25,9 +25,12 @@ app.listen(process.env.PORT, () => {
     console.log(`Server is listening on port ${process.env.PORT}`)
 });
 const categoryRouter = require("./routes/category.route")
-app.use('/api/categories',categoryRouter)
+app.use('/api/categories', categoryRouter)
 const productRouter = require("./routes/product.route")
-app.use('/api/products',productRouter)
+app.use('/api/products', productRouter)
+const userRouter =require("./routes/user.route")
+app.use('/api/users', userRouter); 
+
 module.exports = app
 
 

@@ -4,8 +4,7 @@
     "builds": [
         {
             "src": "app.js",
-            "use": "@vercel/node",
-            "timeout": 60
+            "use": "@vercel/node"
         }
     ],
     "routes": [
@@ -13,5 +12,8 @@
             "src": "/(.*)",
             "dest": "/app.js"
         }
-    ]
+    ],
+    "build": {
+        "timeout": 60
+      }
 }

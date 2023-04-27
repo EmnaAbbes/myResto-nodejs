@@ -8,7 +8,7 @@ app.use(cors())
 app.use(express.json())
 mongoose.set("strictQuery", false);
 // Connexion à la base données
-mongoose.connect(process.env.DATABASE, {
+mongoose.connect(process.env.DATABASECLOUD, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })

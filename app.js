@@ -32,7 +32,7 @@ const userRouter =require("./routes/user.route")
 app.use('/api/users', userRouter); 
 
 module.exports = async (req, res) => {
-    await within(app, res, 7000)
+    await within(app, res, 10000)
 }
 
 async function within(fn, res, duration) {

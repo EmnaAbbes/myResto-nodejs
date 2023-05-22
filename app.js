@@ -2,9 +2,12 @@ const express = require("express")
 const mongoose = require("mongoose")
 const dotenv = require("dotenv")
 const cors = require("cors")
+let corsOptions = {
+    origin: 'trustedwebsite.com' // Compliant
+  };  
 dotenv.config()
 const app = express()
-app.use(cors())
+app.use(cors(corsOptions))
 app.use(express.json())
 mongoose.set("strictQuery", false);
 // Connexion à la base données

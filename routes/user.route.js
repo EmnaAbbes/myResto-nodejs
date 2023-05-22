@@ -3,6 +3,16 @@ const router = express.Router();
 const User = require('../models/user.js');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
+//get
+router.get('/',async (req, res,) => {
+    try {
+        const users = await User.find()
+        res.status(200).json(users);
+    } catch (error) {
+        res.status(404).json({ message: error.message });
+    }
+});
+
 //Register
 router.post('/', async (req, res,) => {
     const { name, email, password, role } = req.body;

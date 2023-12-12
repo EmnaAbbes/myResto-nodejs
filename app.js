@@ -30,6 +30,8 @@ const productRouter = require("./routes/product.route")
 app.use('/api/products', productRouter)
 const userRouter =require("./routes/user.route")
 app.use('/api/users', userRouter); 
+const paymentRouter = require("./routes/payment.route.js");
+app.use('/api/payment', paymentRouter);
 
 module.exports = app
 
